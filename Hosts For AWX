@@ -1,0 +1,51 @@
+---
+  - name: Provision EC2
+    hosts: localhost
+    tasks:
+      - name: Provision CentOS7
+        ec2:
+          aws_region: ap-northeast-1a
+          instance_type: t2.micro
+          image: ami-045f38c93733dd48d
+          count: 1
+          vpc_subnet_id: subnet-2aa94e62
+          assign_public_ip: yes
+          group: awx_sec_gr
+          key_name: AWX Key Pair
+          
+      - name: Provision Ubuntu 16.04 LTS
+        ec2:
+          aws_region: ap-northeast-1a
+          instance_type: t2.micro
+          image: ami-02794be3fb6de50e1
+          count: 1
+          vpc_subnet_id: subnet-2aa94e62
+          assign_public_ip: yes
+          user_data: |
+               #!/bin/sh
+               sudo apt-get install python -y
+               sudo apt-get install git -y
+          group: awx_sec_gr
+          key_name: AWX Key Pair
+
+      - name: Provision Debian GNU-Linux8
+        ec2:
+          aws_region: ap-northeast-1a
+          instance_type: t2.micro
+          image: ami-0e39dfb1283d1154e
+          count: 1
+          vpc_subnet_id: subnet-2aa94e62
+          assign_public_ip: yes
+          group: awx_sec_gr
+          key_name: AWX Key Pair
+
+      - name: Provision Windows 2016
+        ec2:
+          aws_region: ap-northeast-1a
+          instance_type: t2.micro
+          image: ami-0227ec37bb20fc66f
+          count: 1
+          vpc_subnet_id: subnet-2aa94e62
+          assign_public_ip: yes
+          group: awx_sec_gr
+          key_name: AWX Key Pair
