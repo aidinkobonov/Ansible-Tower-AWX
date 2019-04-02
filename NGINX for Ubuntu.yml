@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: install nginx webserver on ubuntu os
+  hosts: all
   become: yes
   become_method: sudo
   tasks:
