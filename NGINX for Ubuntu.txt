@@ -6,5 +6,5 @@
     - name: nginx installation on ubuntu host
       apt: 
         name=nginx 
-        state=latest
+        state=present
       when: ansible_distribution == "ubuntu"
