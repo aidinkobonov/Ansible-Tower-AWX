@@ -8,4 +8,4 @@
       apt: 
         name=nginx 
         state=present
-      when: ansible_distribution == "ubuntu"
+      when: ansible_distribution == "Ubuntu"
