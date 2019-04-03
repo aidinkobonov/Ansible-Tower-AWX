@@ -10,12 +10,15 @@
           - tree 
           - telnet 
         state=present
-      when: ansible_distribution == "CentOS7"
+#      when: ansible_distribution == "CentOS"
     - name: Install a list of packages on debian and ubuntu
       apt:
         name:
           - tree 
           - vim 
           - telnet 
-        state=present
-      when: ansible_distribution == "Ubuntu" "Debian8"
+        state=present     
+#      when: 
+#        - ansible_distribution == "Ubuntu"
+#        - ansible_distribution == "CentOS"
+#        - ansible_distribution == "Debian"
