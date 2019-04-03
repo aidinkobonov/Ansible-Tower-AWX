@@ -15,4 +15,4 @@
       apt:
         name=telnet
         state=present
-      when: ansible_distribution == "Ubuntu" "Debian" "CentOS"
+      when: ansible_distribution == "Ubuntu" "Debian8" "CentOS7"
