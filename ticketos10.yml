@@ -9,12 +9,12 @@
         - vim 
         - tree 
         - telnet 
-      state=present
+      state: present
   - name: Install a list of packages on debian and ubuntu
     apt:
       name:
         - tree 
         - vim 
         - telnet 
-      state=present
+      state: present
 #  when: ansible_distribution == 'CentOS' and ansible_distribution == 'Debian' and ansible_distribution == 'Ubuntu'
