@@ -13,3 +13,25 @@
         name: httpd
         state: started
         enabled: yes
+
+    - name: Install and start apache webserver on Debian
+      when: ansible_distribution == 'Debian'
+      apt:
+        name: httpd
+        state: present 
+    - name: Start apache web server
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+    
+    - name: Install and start apache webserver on Ubuntu
+      when: ansible_distribution == 'Ubuntu'
+      apt:
+        name: httpd
+        state: present 
+    - name: Start apache web server
+      service:
+        name: httpd
+        state: started
+        enabled: yes
