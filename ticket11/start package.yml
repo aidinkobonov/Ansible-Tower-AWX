@@ -9,6 +9,7 @@
         name: httpd
         state: present 
     - name: Start apache web server
+      when: ansible_distribution == 'CentOS'
       service:
         name: httpd
         state: started
@@ -20,6 +21,7 @@
         name: apache2
         state: present 
     - name: Start apache web server
+      when: ansible_distribution == 'Debian'
       service:
         name: apache2
         state: started
@@ -31,6 +33,7 @@
         name: apache2
         state: present 
     - name: Start apache web server
+      when: ansible_distribution == 'Ubuntu'
       service:
         name: apache2
         state: started
